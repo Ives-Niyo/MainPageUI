@@ -8,7 +8,7 @@ namespace MainPageUITraining
         {
             InitializeComponent();
             GameBackground.IsAnimationPlaying = false;
-            AviatorPlane.IsAnimationPlaying = false;
+            AirCraft.IsAnimationPlaying = false;
             
         }
 
@@ -16,7 +16,7 @@ namespace MainPageUITraining
         {
 
             GameBackground.IsAnimationPlaying = true;
-            AviatorPlane.IsAnimationPlaying = true;
+            AirCraft.IsAnimationPlaying = true;
             // 🔧 TEST multiplier
             double testMultiplier = 6.0;
 
@@ -28,48 +28,48 @@ namespace MainPageUITraining
             double frameHeight = GameFrame.Height;
 
             // 🔑 Plane size
-            double planeWidth = AviatorPlane.Width;
-            double planeHeight = AviatorPlane.Height;
+            double CraftWidth = AirCraft.Width;
+            double CraftHeight = AirCraft.Height;
 
             // 🔑 Max safe positions (keep plane INSIDE frame)
-            double maxX = frameWidth - planeWidth - 25;
-            double maxY = frameHeight - planeHeight - 25;
+            double maxX = frameWidth - CraftWidth - 25;
+            double maxY = frameHeight - CraftHeight - 25;
 
             // 🔑 Target diagonal position
             double targetX = maxX * progress;
             double targetY = -maxY * progress;
 
             // Stop previous animation
-            AviatorPlane.AbortAnimation("PlaneDiagonalAnimation");
+            AirCraft.AbortAnimation("CraftDiagonalAnimation");
 
             // Animate diagonally
             var animation = new Animation();
 
             animation.Add(0, 1, new Animation(
-                d => AviatorPlane.TranslationX = d,
+                d => AirCraft.TranslationX = d,
                 0,
                 targetX,
                 Easing.Linear));
 
             animation.Add(0, 1, new Animation(
-                d => AviatorPlane.TranslationY = d,
+                d => AirCraft.TranslationY = d,
                 0,
                 targetY,
                 Easing.Linear));
 
             animation.Commit(
                 owner: AviatorPlane,
-                name: "PlaneDiagonalAnimation",
+                name: "CraftDiagonalAnimation",
                 length: 900,
                 easing: Easing.Linear,
                 finished: (v, c) =>
                 {
                     // 🔑 RESET after reaching edge
-                    AviatorPlane.TranslationX = 0;
-                    AviatorPlane.TranslationY = 0;
-                    AviatorPlane.Rotation = 0;
+                    AirCraft.TranslationX = 0;
+                    AirCraft.TranslationY = 0;
+                    AirCraft.Rotation = 0;
                     GameBackground.IsAnimationPlaying = false;
-                    AviatorPlane.IsAnimationPlaying = false;
+                    AirCraft.IsAnimationPlaying = false;
 
                 });
         
@@ -77,7 +77,7 @@ namespace MainPageUITraining
             
 
         }
-        private void UpdatePlaneAnimation(double currentMultiplier)
+        private void UpdateCraftAnimation(double currentMultiplier)
         {
             
         }
