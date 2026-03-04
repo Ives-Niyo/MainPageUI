@@ -40,7 +40,7 @@
             Margin="0,20,0,0">
 
                         <Label
-                x:Name="PredictionLabel"
+                x:Name="kLabel"
                 Text="1.00x"
                 FontSize="32"
                 FontAttributes="Bold"
@@ -49,8 +49,8 @@
                 VerticalTextAlignment="Center" />
                     </Border>
                     <Image
-            x:Name="AviatorPlane"
-            Source="aviatorfly.gif"
+            x:Name="AirCraft"
+            Source="aircraft.gif"
             WidthRequest="90"
             HeightRequest="70"
             HorizontalOptions="Start"
@@ -112,10 +112,10 @@ Margin="0,20,0,0">
                            Aspect="AspectFill"
                            HorizontalOptions="Fill"
                            VerticalOptions="Fill"/>
-                    <Image Source="aviator.png"
+                    <Image Source="aircraft.png"
        Aspect="Center"/>
                         <Label
-x:Name="PredictorLabel"                        
+x:Name="kLabel"                        
 Text="1.00x"
 FontSize="32"
 FontAttributes="Bold"
