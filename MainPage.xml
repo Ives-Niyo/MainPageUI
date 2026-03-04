@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MainPageUITraining.MainPage"
+    BackgroundColor="#121212">
+    <ScrollView>
+
+        <VerticalStackLayout
+        Padding="16"
+        Spacing="16">
+
+            <!-- 🔲 GIF / IMAGE / GAME AREA -->
+            <Frame
+    x:Name="GameFrame"            
+    HeightRequest="300"
+    CornerRadius="20"
+    Padding="0"
+    BackgroundColor="#1E1E1E"
+    HasShadow="False">
+
+                <!-- GRID allows overlay -->
+                <Grid>
+
+                    <!-- BACKGROUND IMAGE -->
+                    <Image 
+             x:Name="GameBackground"           
+            Source="loginbackground.gif"
+            Aspect="AspectFill" />
+
+                    <!-- MULTIPLIER / PREDICTION OVER IMAGE -->
+                    <Border
+            Stroke="DodgerBlue"
+            StrokeThickness="4"
+            StrokeShape="RoundRectangle 100"
+            WidthRequest="140"
+            HeightRequest="140"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Margin="0,20,0,0">
+
+                        <Label
+                x:Name="PredictionLabel"
+                Text="1.00x"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="Red"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center" />
+                    </Border>
+                    <Image
+            x:Name="AviatorPlane"
+            Source="aviatorfly.gif"
+            WidthRequest="90"
+            HeightRequest="70"
+            HorizontalOptions="Start"
+            VerticalOptions="End"
+            Margin="0,0,16,10" />
+
+                </Grid>
+            </Frame>
+
+            <!-- 🔳 BUTTON CONTAINER -->
+            <Frame
+            CornerRadius="24"
+            Padding="16"
+            BackgroundColor="#1E1E1E"
+            HasShadow="False">
+
+                <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="25">
+
+                    <!-- ▶ PLAY BUTTON -->
+                    <Button
+                    Text="PLAY"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    BackgroundColor="#400000FF"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"   
+                    Clicked="OnPlayClicked"    
+                    Grid.Column="0" />
+
+                    <!-- 💰 CASH BUTTON -->
+                    <Button
+                    Text="CASH"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    BackgroundColor="#400000FF"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    Grid.Column="1" />
+
+                </Grid>
+                
+             </Frame>
+            <Border
+Stroke="DodgerBlue"
+StrokeThickness="4"
+StrokeShape="RoundRectangle 100"
+WidthRequest="140"
+HeightRequest="140"
+HorizontalOptions="Center"
+VerticalOptions="Start"
+Margin="0,20,0,0">
+
+                <Grid>
+                    <Image Source="istockphoto.jpg"
+                           Aspect="AspectFill"
+                           HorizontalOptions="Fill"
+                           VerticalOptions="Fill"/>
+                    <Image Source="aviator.png"
+       Aspect="Center"/>
+                        <Label
+x:Name="PredictorLabel"                        
+Text="1.00x"
+FontSize="32"
+FontAttributes="Bold"
+TextColor="Red"
+HorizontalTextAlignment="Center"
+VerticalTextAlignment="Center" />
+                    
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
